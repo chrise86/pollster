@@ -1,4 +1,5 @@
-<%= form_for(@question) do |f|%>
+<%= form_for([@poll, @question]) do |f|%>
+
   <div class="field">
     <%= f.label "Enter your question:" %>
     <%= f.text_field :text %>

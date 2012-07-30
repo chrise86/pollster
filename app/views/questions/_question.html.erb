@@ -1,6 +1,5 @@
-<li class="question">
-  <div class="body">
-    <%= question.text %> <br />
-  </div>
-
-</li>
+<tr>
+  <td><%= question.text %></td>
+  <td><%= link_to 'Edit', edit_poll_question_path(@poll.id, question) %></td>
+  <td><%= link_to 'Delete', poll_question_path(@poll.id, question), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

@@ -4,7 +4,9 @@
 <%= render 'form'%>
 
 <h2>Questions for this poll:</h2>
-<%= render :partial => 'questions/question', :collection => @questions %>
+<%= render :partial => 'questions/questions'%>
+<br />
 
-<%= link_to 'View this poll', @poll%>
+<%= link_to 'Create new questions for this poll', new_poll_question_path(@poll)%> <br />
+<%= link_to 'View this poll', @poll%> <br />
 <%= link_to 'View all polls', polls_path%>

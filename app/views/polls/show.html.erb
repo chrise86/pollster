@@ -8,8 +8,13 @@
   <%= @poll.name %>
 </p>
 
-<%= render :partial => 'questions/question', :collection => @poll.questions %>
+<p>
+ <b>Poll Questions:</b>
+</p>
 
+<%= render :partial => 'questions/showquestions'%>
 
-The link to your poll is: <%= link_to root_url + "polls/#{@poll.id}", root_url + "polls/#{@poll.id}" %> |
-<%= link_to 'View all polls', polls_path %>
+<br />
+The link to this poll is: <%= link_to root_url + "polls/#{@poll.id}", root_url + "polls/#{@poll.id}" %>
+<br />
+<b><%= link_to 'View all polls', polls_path %></b>
