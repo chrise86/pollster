@@ -1,6 +1,14 @@
 PollsterJy::Application.routes.draw do
 
- root :to => "polls#index"
+  get "questions/_form"
+
+  get "questions/edit"
+
+  get "questions/new"
+
+  get "questions/show"
+
+ root :to => "poll#index"
  resources :polls, :except => :edit
 
 
