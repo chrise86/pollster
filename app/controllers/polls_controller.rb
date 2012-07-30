@@ -10,7 +10,8 @@ class PollsController < ApplicationController
   def create
     @poll = Poll.new(params[:poll])
     if @poll.save
-      redirect_to @poll, notice: 'Poll was successfully created.'
+      link = "<a href=\"#{root_url}#{@poll.edit_slug}\">#{root_url}#{@poll.edit_slug}</a>"
+      redirect_to @poll, notice: "Poll was successfully created. Your special editing link is: #{link}".html_safe
     else
       render action: "new"
     end

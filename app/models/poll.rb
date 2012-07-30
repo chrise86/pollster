@@ -12,4 +12,5 @@ class Poll < ActiveRecord::Base
   end
 
 
+
 end
