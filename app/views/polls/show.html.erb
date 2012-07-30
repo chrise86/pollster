@@ -1,0 +1,13 @@
+<h1>Polls#show</h1>
+<p>Find me in app/views/polls/show.html.erb</p>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @poll.name %>
+</p>
+
+
+Your special editing link is: <%= link_to "#{root_url}#{@poll.edit_slug}", root_url + @poll.edit_slug %> |
+<%= link_to 'View all polls', polls_path %>

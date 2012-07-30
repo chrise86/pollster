@@ -21,6 +21,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'heroku'
+gem 'less-rails-bootstrap'
+# gem 'less-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -36,3 +39,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'therubyracer'
+# gem 'libv8', '3.3.10.4'
