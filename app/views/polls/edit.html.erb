@@ -1,7 +1,10 @@
-<h1>Polls#edit</h1>
-<p>Find me in app/views/polls/edit.html.erb</p>
+<h1>Edit your poll</h1>
+
 
 <%= render 'form'%>
+
+<h2>Questions for this poll:</h2>
+<%= render :partial => 'questions/question', :collection => @questions %>
 
 <%= link_to 'View this poll', @poll%>
 <%= link_to 'View all polls', polls_path%>

@@ -2,6 +2,7 @@ class PollsController < ApplicationController
 
   def index
     @polls = Poll.all
+    @question = Question.new
   end
 
   def show
@@ -24,6 +25,15 @@ class PollsController < ApplicationController
 
   def edit
     @poll = Poll.find_by_edit_slug(params[:edit_slug])
+  end
+
+  def update
+    @poll = Poll.find(params[:id])
+      if @poll.update_attributes(params[:poll])
+        redirect_to @poll, notice: 'Poll was successfully updated.'
+      else
+        render action: "edit"
+      end
   end
 
 end
