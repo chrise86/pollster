@@ -3,9 +3,14 @@
   <div class="field">
     <%= f.label "Enter your question:" %>
     <%= f.text_field :text %>
+     <%= f.label "Question type:" %>
+    <%= f.select(:type, [['Open Ended', :open], ['Multiple Choice', :choice]])%>
   </div>
 
+
   <div class="actions">
-    <%= f.submit "Add question to poll" %>
+    <%= f.submit "Add question to poll", :class=>"btn btn-primary btn-large"  %>
   </div>
 <% end %>
+
+

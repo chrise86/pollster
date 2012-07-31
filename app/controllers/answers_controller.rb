@@ -20,9 +20,8 @@ private
     @question = Question.find(params[:question_id])
   end
 
-end
-
-
   def show
      @question = Question.find(params[:id])
   end
+
+end

@@ -1,10 +1,10 @@
 <%= form_for(@poll) do |f|%>
   <div class="field">
-    <%= f.label "Name your Poll:" %>
+    <%= f.label "First, why don't you name your Poll:" %>
     <%= f.text_field :name %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Submit My Awesome Poll" %>
+    <%= f.submit "Submit My Awesome Poll", :class=>"btn btn-primary btn-large" %>
   </div>
 <% end %>

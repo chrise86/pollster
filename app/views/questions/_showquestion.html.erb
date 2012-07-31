@@ -1,4 +1,5 @@
 <tr>
   <td><%= question.text %></td>
-  <td><%= link_to 'Answer this question', new_poll_question_answer_path(@poll.id, question) %></td>
+  <td><%= link_to 'Answer this question', new_poll_question_answer_path(@poll.id, question), :class=>"btn btn-primary btn-small" %></td>
 </tr>
+

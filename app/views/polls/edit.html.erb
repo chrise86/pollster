@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Edit your poll, add questions, and view answers</h1>
 
 
@@ -7,7 +9,8 @@
 <%= render :partial => 'questions/questions'%>
 <br />
 
+
 <h3><%= link_to 'Add a question to this poll', new_poll_question_path(@poll)%></h3> <br />
 Permalink for your poll: <%= link_to "#{root_url}polls/#{@poll.id}", poll_path(@poll)%> <br />
-<%= link_to 'View your poll', @poll%> <br />
+<%= link_to 'View my poll', @poll%> <br />
 <%= link_to 'View all polls', polls_path%>
