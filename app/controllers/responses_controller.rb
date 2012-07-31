@@ -1,4 +1,5 @@
 class ResponsesController < ApplicationController
+
   def new
     @poll = Poll.find(params[:poll_id])
   end
@@ -10,9 +11,6 @@ class ResponsesController < ApplicationController
       end
     end
     redirect_to poll_path(params[:poll_id])
-  end
-
-  def show
   end
 
 end

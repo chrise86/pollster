@@ -1,6 +1,6 @@
 <h1><%= @poll.name %></h1>
 
-<%= form_tag poll_responses_path(@poll) do %>
+<%= form_tag  poll_responses_path(@poll) do %>
 
   <% @poll.questions.each do |question| %>
     <p><%= "#{question.text}"%></p>
