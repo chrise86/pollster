@@ -4,7 +4,7 @@
     <%= f.label "Enter your question:" %>
     <%= f.text_field :text %>
      <%= f.label "Question type:" %>
-    <%= f.select(:type, [['Open Ended', :open], ['Multiple Choice', :choice]])%>
+    <%= f.select(:format, [['Open Ended', 'open'], ['Multiple Choice', 'choice']])%>
   </div>
 
 
