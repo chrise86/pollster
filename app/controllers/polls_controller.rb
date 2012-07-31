@@ -16,6 +16,7 @@ class PollsController < ApplicationController
   def create
     @poll = Poll.new(params[:poll])
     if @poll.save
+      ## move link to model?
       link = "<a href=\"#{root_url}#{@poll.edit_slug}\">#{root_url}#{@poll.edit_slug}</a>"
       flash[:notice] = "Poll was successfully created. Save this url to edit your poll or add questions: #{link}".html_safe
       redirect_to "#{root_url}#{@poll.edit_slug}"
