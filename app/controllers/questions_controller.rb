@@ -7,7 +7,8 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
       if @question.update_attributes(params[:question])
-        redirect_to edit_url, notice: 'Question was successfully updated.'
+        flash[:notice] = 'Question was successfully updated.'
+        redirect_to edit_url
       else
         render action: "edit"
       end
@@ -20,7 +21,8 @@ class QuestionsController < ApplicationController
   def create
      @question = @poll.questions.build(params[:question])
        if @question.save
-         redirect_to edit_url, notice: 'Question was successfully created.'
+         flash[:notice] = 'Question was successfully created.'
+         redirect_to edit_url
        else
          render action: "new"
        end
@@ -33,7 +35,8 @@ class QuestionsController < ApplicationController
   def destroy
     @question = @poll.questions.find(params[:id])
     @question.destroy
-    redirect_to poll_path(params[:poll_id])
+    flash[:error] = "Your question has been deleted."
+    redirect_to edit_url
   end
 
 private

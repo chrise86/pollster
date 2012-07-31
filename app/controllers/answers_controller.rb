@@ -7,7 +7,8 @@ class AnswersController < ApplicationController
   def create
     @answer = @question.answers.build(params[:answer])
     if @answer.save
-      redirect_to poll_path (@question.poll), notice: 'Answer was successfully created.'
+      flash[:notice] = 'Answer was successfully created.'
+      redirect_to poll_path (@question.poll)
     else
       render action: "new"
     end

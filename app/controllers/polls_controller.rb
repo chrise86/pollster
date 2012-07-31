@@ -17,7 +17,8 @@ class PollsController < ApplicationController
     @poll = Poll.new(params[:poll])
     if @poll.save
       link = "<a href=\"#{root_url}#{@poll.edit_slug}\">#{root_url}#{@poll.edit_slug}</a>"
-      redirect_to "#{root_url}#{@poll.edit_slug}", notice: "Poll was successfully created. Save this url to edit your poll or add questions: #{link}".html_safe
+      flash[:notice] = "Poll was successfully created. Save this url to edit your poll or add questions: #{link}".html_safe
+      redirect_to "#{root_url}#{@poll.edit_slug}"
     else
       render action: "new"
     end
@@ -30,7 +31,8 @@ class PollsController < ApplicationController
   def update
     @poll = Poll.find(params[:id])
       if @poll.update_attributes(params[:poll])
-        redirect_to @poll, notice: 'Poll was successfully updated.'
+        flash[:notice] =  'Poll was successfully updated.'
+        redirect_to @poll
       else
         render action: "edit"
       end
