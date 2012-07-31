@@ -1,0 +1,13 @@
+<%= form_for([:poll, :question, @answer]) do |f|%>
+
+  <div class="field">
+   <h2> <%= @answer.question.text %> </h2>
+   <br />
+    <%= f.label "Enter your answer:" %>
+    <%= f.text_field :text %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add answer to question" %>
+  </div>
+<% end %>

@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
       if @question.update_attributes(params[:question])
-        redirect_to poll_path (@question.poll), notice: 'Question was successfully updated.'
+        redirect_to edit_url, notice: 'Question was successfully updated.'
       else
         render action: "edit"
       end
@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
   def create
      @question = @poll.questions.build(params[:question])
        if @question.save
-         redirect_to poll_path (@question.poll), notice: 'Question was successfully created.'
+         redirect_to edit_url, notice: 'Question was successfully created.'
        else
          render action: "new"
        end
@@ -40,6 +40,10 @@ private
 
 def get_poll
   @poll = Poll.find(params[:poll_id])
+end
+
+def edit_url
+  "#{root_url}#{@poll.edit_slug}"
 end
 
 

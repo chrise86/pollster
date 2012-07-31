@@ -1,4 +1,4 @@
-<h1>Edit your poll</h1>
+<h1>Edit your poll, add questions, and view answers</h1>
 
 
 <%= render 'form'%>
@@ -7,6 +7,6 @@
 <%= render :partial => 'questions/questions'%>
 <br />
 
-<%= link_to 'Create new questions for this poll', new_poll_question_path(@poll)%> <br />
+<h3><%= link_to 'Add a question to this poll', new_poll_question_path(@poll)%></h3> <br />
 <%= link_to 'View this poll', @poll%> <br />
 <%= link_to 'View all polls', polls_path%>
