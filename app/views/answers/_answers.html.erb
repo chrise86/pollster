@@ -1,2 +1,3 @@
-<h1>Answers#_answers</h1>
-<p>Find me in app/views/answers/_answers.html.erb</p>
+<table>
+  <%= render :partial => "answers/answer", :collection => @question.answers %>
+</table>
