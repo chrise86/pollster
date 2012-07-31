@@ -41,6 +41,8 @@ class QuestionsController < ApplicationController
 
 private
 
+## move to model
+
 def get_poll
   @poll = Poll.find(params[:poll_id])
 end

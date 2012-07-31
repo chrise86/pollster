@@ -1,0 +1,12 @@
+<h1><%= @poll.name %></h1>
+
+<%= form_tag "responses_controller.rb" do %>
+
+  <% @poll.questions.each do |question| %>
+    <p><%= "#{question.text}"%></p>
+    <p><%= text_field_tag "answer-#{question.id}"%>
+  <% end %>
+        <br>
+        <%= submit_tag "Submit your response"%>
+<% end %>
+

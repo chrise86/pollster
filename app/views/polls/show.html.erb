@@ -10,7 +10,7 @@
  <b>Poll Questions:</b>
 </p>
 
-<%= render :partial => 'questions/showquestions'%>
+<%= link_to "Take this poll", new_poll_responses_path(@poll) %>
 
 <br />
 The link to this poll is: <%= link_to root_url + "polls/#{@poll.id}", root_url + "polls/#{@poll.id}" %>
