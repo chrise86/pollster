@@ -3,6 +3,7 @@ class Poll < ActiveRecord::Base
   before_save :set_edit_slug
   has_many :questions
   has_many :answers, :through => :questions
+  validates :name, :presence => true
 
   def set_edit_slug
     self.edit_slug ||= random_string
