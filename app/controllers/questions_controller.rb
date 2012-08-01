@@ -1,18 +1,5 @@
 class QuestionsController < ApplicationController
   before_filter :get_poll
-  def edit
-    @question = @poll.questions.find(params[:id])
-  end
-
-  def update
-    @question = Question.find(params[:id])
-      if @question.update_attributes(params[:question])
-        flash[:notice] = 'Question was successfully updated.'
-        redirect_to edit_url
-      else
-        render action: "edit"
-      end
-  end
 
   def new
     @question = @poll.questions.build
@@ -32,6 +19,21 @@ class QuestionsController < ApplicationController
      @question = Question.find(params[:id])
   end
 
+
+  def edit
+    @question = @poll.questions.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+      if @question.update_attributes(params[:question])
+        flash[:notice] = 'Question was successfully updated.'
+        redirect_to edit_url
+      else
+        render action: "edit"
+      end
+  end
+
   def destroy
     @question = @poll.questions.find(params[:id])
     @question.destroy
@@ -39,17 +41,14 @@ class QuestionsController < ApplicationController
     redirect_to edit_url
   end
 
-private
+  private
 
-## move to model
+  def get_poll
+    @poll = Poll.find(params[:poll_id])
+  end
 
-def get_poll
-  @poll = Poll.find(params[:poll_id])
-end
-
-def edit_url
-  "#{root_url}#{@poll.edit_slug}"
-end
-
+  def edit_url
+    "#{root_url}#{@poll.edit_slug}"
+  end
 
 end
