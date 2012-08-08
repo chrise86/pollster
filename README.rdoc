@@ -1,1 +1,1 @@
-Made by Jessie Young in week 8 at Dev Bootcamp. Lives at: https://api.heroku.com/myapps/protected-caverns-9106
+Made by Jessie Young in week 8 at Dev Bootcamp. Lives at: http://protected-caverns-9106.herokuapp.com/
